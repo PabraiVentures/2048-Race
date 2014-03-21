@@ -85,14 +85,58 @@
   [(id)self.tiles[tmp] setText:@"2"];
 }
 
-- (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
+- (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Up :)");
-  
+  for (int m=0;m<4;m++){
+    for (int i=1+4*m;i<4+4*m;i++){
+      if ([[self.tiles[[self flipIndex:i]] text]intValue]) {
+        //The tile has a value
+        //Tile not at boundry
+        if ([[self.tiles[[self flipIndex:i]-1] text]intValue]) {
+          //If the tile to left has a value
+          //...
+          if ([[self.tiles[[self flipIndex:i]-1] text]intValue]==[[self.tiles[[self flipIndex:i]] text]intValue] ) {
+            //if the one on the left matches
+          }
+        }
+        else{
+          //move the tile to the left
+          [self moveDownfrom:i withEdge:4*m];
+          
+        }//ends else
+        
+        
+      }//else the tile is empty
+      
+    }
+  }
   
 }
-- (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
+- (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Down :)");
-  
+  for (int m=0;m<4;m++){
+    for (int i=3+4*m;i>=0+4*m;i--){
+      if ([[self.tiles[[self flipIndex:i]] text]intValue]) {
+        //The tile has a value
+        //Tile not at boundry
+        if ([[self.tiles[[self flipIndex:i]+1] text]intValue]) {
+          //If the tile to right has a value
+          //...
+          if ([[self.tiles[[self flipIndex:i]+1] text]intValue]==[[self.tiles[[self flipIndex:i]] text]intValue] ) {
+            //if the one on the right matches
+          }
+        }
+        else{
+          //move the tile to the left
+          [self moveUpfrom:i withEdge:4*m+3];
+          
+        }//ends else
+        
+        
+      }//else the tile is empty
+      
+    }
+  }
 }
 - (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Left :)");
@@ -132,10 +176,68 @@
     j++;
   }//ends while
 }
+-(void)moveDownfrom: (int) position withEdge: (int) edge{
+  //this function moves the tile to the leftmost position through free space
+  int j=0;
+  int i=position;
+  while(([self flipIndex:i]-j-1>[self flipIndex:edge]-1)&&([[self.tiles[[self flipIndex:i]-j-1] text] intValue ]==0)){
+    [self.tiles[[self flipIndex:i]-j-1] setText:[self.tiles[[self flipIndex:i]-j] text]];
+    [self.tiles[[self flipIndex:i]-j] setText:@""];
+    j++;
+  }//ends while
+}-(void)moveRightfrom: (int) position withEdge: (int) edge{
+  //this function moves the tile to the rightmost position through free space
+  int j=0;
+  int i=position;
+  while((i+j+1<=edge)&&([[self.tiles[i+j+1] text] intValue ]==0)){
+    [self.tiles[i+j+1] setText:[self.tiles[i+j] text]];
+    [self.tiles[i+j] setText:@""];
+    j++;
+  }//ends while
+}
 
+-(void)moveUpfrom: (int) position withEdge: (int) edge{
+  //this function moves the tile to the rightmost position through free space
+  int j=0;
+  int i=position;
+  while(([self flipIndex:i]+j+1<=[self flipIndex:edge])&&([[self.tiles[[self flipIndex:i]+j+1] text] intValue ]==0)){
+    [self.tiles[[self flipIndex:i]+j+1] setText:[self.tiles[[self flipIndex:i]+j] text]];
+    [self.tiles[[self flipIndex:i]+j] setText:@""];
+    j++;
+  }//ends while
+}
 - (void)handleSwipeRightFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Right :)");
+  for (int m=0;m<4;m++){
+    for (int i=3+4*m;i>=0+4*m;i--){
+      if ([[self.tiles[i] text]intValue]) {
+        //The tile has a value
+        //Tile not at boundry
+        if ([[self.tiles[i+1] text]intValue]) {
+          //If the tile to right has a value
+          //...
+          if ([[self.tiles[i+1] text]intValue]==[[self.tiles[i] text]intValue] ) {
+            //if the one on the right matches
+          }
+        }
+        else{
+          //move the tile to the left
+          [self moveRightfrom:i withEdge:4*m+3];
+          
+        }//ends else
+        
+        
+      }//else the tile is empty
+      
+    }
+  }
   
+}
+-(int)flipIndex: (int) index{
+  int tmp=0;
+  int a[]={12,8,4,0,13,9,5,1,14,10,6,2,15,11,7,3};
+  if (index>15)return 0;
+  return a[index];
 }
 - (void)didReceiveMemoryWarning
 {
