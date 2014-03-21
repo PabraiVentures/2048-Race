@@ -87,30 +87,29 @@
 
 - (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Up :)");
-  for (int m=0;m<4;m++){
-    for (int i=1+4*m;i<4+4*m;i++){
-      if ([[self.tiles[[self flipIndex:i]] text]intValue]) {
-        //The tile has a value
-        //Tile not at boundry
-        if ([[self.tiles[[self flipIndex:i]-1] text]intValue]) {
-          //If the tile to left has a value
-          //...
-          if ([[self.tiles[[self flipIndex:i]-1] text]intValue]==[[self.tiles[[self flipIndex:i]] text]intValue] ) {
-            //if the one on the left matches
-          }
+  int i;
+  for(int n=1;n<5;n++){
+    i=4*n-3;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i-1] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i-1] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
         }
-        else{
-          //move the tile to the left
-          [self moveDownfrom:i withEdge:4*m];
-          
-        }//ends else
+      }
+      else{
+        //move the tile to the left
+        [self moveLeftfrom:i withEdge:4*m];
         
-        
-      }//else the tile is empty
+      }//ends else
       
-    }
+      
+    }//else the tile is empty
+    
   }
-  
 }
 - (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Down :)");
