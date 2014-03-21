@@ -85,24 +85,24 @@
   [(id)self.tiles[tmp] setText:@"2"];
 }
 
-- (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
+- (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Up :)");
   int i;
-  for(int n=1;n<5;n++){
-    i=4*n-3;
+  for(int n=2;n<5;n++){
+    i=4*n-4;
     if ([[self.tiles[i] text]intValue]) {
       //The tile has a value
       //Tile not at boundry
-      if ([[self.tiles[i-1] text]intValue]) {
+      if ([[self.tiles[i-4] text]intValue]) {
         //If the tile to left has a value
         //...
-        if ([[self.tiles[i-1] text]intValue]==[[self.tiles[i] text]intValue] ) {
+        if ([[self.tiles[i-4] text]intValue]==[[self.tiles[i] text]intValue] ) {
           //if the one on the left matches
         }
       }
       else{
         //move the tile to the left
-        [self moveLeftfrom:i withEdge:4*m];
+        [self moveUpfrom:i withEdge:0];
         
       }//ends else
       
@@ -110,32 +110,171 @@
     }//else the tile is empty
     
   }
-}
-- (void)handleSwipeUpFrom:(UIGestureRecognizer*)recognizer {
-  NSLog(@"Swiped Down :)");
-  for (int m=0;m<4;m++){
-    for (int i=3+4*m;i>=0+4*m;i--){
-      if ([[self.tiles[[self flipIndex:i]] text]intValue]) {
-        //The tile has a value
-        //Tile not at boundry
-        if ([[self.tiles[[self flipIndex:i]+1] text]intValue]) {
-          //If the tile to right has a value
-          //...
-          if ([[self.tiles[[self flipIndex:i]+1] text]intValue]==[[self.tiles[[self flipIndex:i]] text]intValue] ) {
-            //if the one on the right matches
-          }
+  
+  
+  for(int n=2;n<5;n++){
+    i=4*n-3;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i-4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i-4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
         }
-        else{
-          //move the tile to the left
-          [self moveUpfrom:i withEdge:4*m+3];
-          
-        }//ends else
+      }
+      else{
+        //move the tile to the left
+        [self moveUpfrom:i withEdge:1];
         
-        
-      }//else the tile is empty
+      }//ends else
       
-    }
+      
+    }//else the tile is empty
+    
   }
+  for(int n=2;n<5;n++){
+    i=4*n-2;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i-4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i-4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveUpfrom:i withEdge:2];
+        
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }
+  for(int n=2;n<5;n++){
+    i=4*n-1;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i-4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i-4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveUpfrom:i withEdge:3];
+        
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }}
+- (void)handleSwipeDownFrom:(UIGestureRecognizer*)recognizer {
+  NSLog(@"Swiped Down :)");
+  int i;
+  for(int n=2;n<5;n++){
+    i=16-4*n;
+    NSLog(@"n is %d",n);
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i+4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i+4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveDownfrom:i withEdge:12];
+        
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }
+  
+  
+  for(int n=2;n<5;n++){
+    NSLog(@"n is %d",n);
+    i=17-4*n;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i+4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i+4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveDownfrom:i withEdge:13];
+        
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }
+  for(int n=2;n<5;n++){
+    NSLog(@"n is %d",n);
+    i=18-4*n;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i+4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i+4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveDownfrom:i withEdge:14];
+        
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }
+  for(int n=2;n<5;n++){
+    NSLog(@"n is %d",n);
+    i=19-4*n;
+    if ([[self.tiles[i] text]intValue]) {
+      //The tile has a value
+      //Tile not at boundry
+      if ([[self.tiles[i+4] text]intValue]) {
+        //If the tile to left has a value
+        //...
+        if ([[self.tiles[i+4] text]intValue]==[[self.tiles[i] text]intValue] ) {
+          //if the one on the left matches
+        }
+      }
+      else{
+        //move the tile to the left
+        [self moveDownfrom:i withEdge:15];
+      }//ends else
+      
+      
+    }//else the tile is empty
+    
+  }
+
 }
 - (void)handleSwipeLeftFrom:(UIGestureRecognizer*)recognizer {
   NSLog(@"Swiped Left :)");
@@ -157,7 +296,7 @@
           
         }//ends else
       
-      
+     //theres a value in current, check if next is the same. if so combine them. and remeove the other
     }//else the tile is empty
     
   }
@@ -174,14 +313,17 @@
     [self.tiles[i-j] setText:@""];
     j++;
   }//ends while
+  //current position has moved as much as possible
+  
+  
 }
--(void)moveDownfrom: (int) position withEdge: (int) edge{
+-(void)moveUpfrom: (int) position withEdge: (int) edge{
   //this function moves the tile to the leftmost position through free space
   int j=0;
   int i=position;
-  while(([self flipIndex:i]-j-1>[self flipIndex:edge]-1)&&([[self.tiles[[self flipIndex:i]-j-1] text] intValue ]==0)){
-    [self.tiles[[self flipIndex:i]-j-1] setText:[self.tiles[[self flipIndex:i]-j] text]];
-    [self.tiles[[self flipIndex:i]-j] setText:@""];
+  while((i-4*j-4>edge-4)&&([[self.tiles[i-4*j-4] text] intValue ]==0)){
+    [self.tiles[i-4*j-4] setText:[self.tiles[i-4*j] text]];
+    [self.tiles[i-4*j] setText:@""];
     j++;
   }//ends while
 }-(void)moveRightfrom: (int) position withEdge: (int) edge{
@@ -195,13 +337,13 @@
   }//ends while
 }
 
--(void)moveUpfrom: (int) position withEdge: (int) edge{
+-(void)moveDownfrom: (int) position withEdge: (int) edge{
   //this function moves the tile to the rightmost position through free space
   int j=0;
   int i=position;
-  while(([self flipIndex:i]+j+1<=[self flipIndex:edge])&&([[self.tiles[[self flipIndex:i]+j+1] text] intValue ]==0)){
-    [self.tiles[[self flipIndex:i]+j+1] setText:[self.tiles[[self flipIndex:i]+j] text]];
-    [self.tiles[[self flipIndex:i]+j] setText:@""];
+  while((i+4*j+4<=edge)&&([[self.tiles[i+4*j+4] text] intValue ]==0)){
+    [self.tiles[i+4*j+4] setText:[self.tiles[i+4*j] text]];
+    [self.tiles[i+4*j] setText:@""];
     j++;
   }//ends while
 }
@@ -233,7 +375,6 @@
   
 }
 -(int)flipIndex: (int) index{
-  int tmp=0;
   int a[]={12,8,4,0,13,9,5,1,14,10,6,2,15,11,7,3};
   if (index>15)return 0;
   return a[index];

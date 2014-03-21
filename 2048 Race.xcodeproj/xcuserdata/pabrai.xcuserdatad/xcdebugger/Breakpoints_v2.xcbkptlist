@@ -74,12 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "2048 Race/BSViewController.m"
-            timestampString = "417077891.849679"
+            timestampString = "417118849.665773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "-flipIndex:"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-handleSwipeDownFrom:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "2048 Race/BSViewController.m"
+            timestampString = "417118894.141832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-handleSwipeDownFrom:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
