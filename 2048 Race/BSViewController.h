@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BSViewController : UIViewController
+#import <iAd/iAd.h>
+@interface BSViewController : UIViewController <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *tile1;
 @property (weak, nonatomic) IBOutlet UILabel *tile2;
 @property (weak, nonatomic) IBOutlet UILabel *tile3;
@@ -26,5 +26,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *tile15;
 @property (weak, nonatomic) IBOutlet UILabel *tile16;
 @property (strong,nonatomic) NSMutableArray *tiles;
+@property int score;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak,nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet ADBannerView *ad;
+@property BOOL loaded;
 @end

@@ -22,6 +22,10 @@
 		9332DB7118DBDF9700BE6EE0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9332DB5018DBDF9700BE6EE0 /* UIKit.framework */; };
 		9332DB7918DBDF9700BE6EE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9332DB7718DBDF9700BE6EE0 /* InfoPlist.strings */; };
 		9332DB7B18DBDF9700BE6EE0 /* _048_RaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9332DB7A18DBDF9700BE6EE0 /* _048_RaceTests.m */; };
+		93BF64C718DD3E9800E8F879 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BF64C618DD3E9800E8F879 /* iAd.framework */; };
+		93BF64CF18DD78B600E8F879 /* sm152.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BF64CE18DD78B600E8F879 /* sm152.png */; };
+		93BF64D118DD791400E8F879 /* sm120.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BF64D018DD791400E8F879 /* sm120.png */; };
+		93BF64D318DD792200E8F879 /* sm76.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BF64D218DD792200E8F879 /* sm76.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		9332DB7618DBDF9700BE6EE0 /* 2048 RaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "2048 RaceTests-Info.plist"; sourceTree = "<group>"; };
 		9332DB7818DBDF9700BE6EE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9332DB7A18DBDF9700BE6EE0 /* _048_RaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _048_RaceTests.m; sourceTree = "<group>"; };
+		93BF64C618DD3E9800E8F879 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		93BF64CE18DD78B600E8F879 /* sm152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sm152.png; sourceTree = "<group>"; };
+		93BF64D018DD791400E8F879 /* sm120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sm120.png; sourceTree = "<group>"; };
+		93BF64D218DD792200E8F879 /* sm76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sm76.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BF64C718DD3E9800E8F879 /* iAd.framework in Frameworks */,
 				9332DB4F18DBDF9700BE6EE0 /* CoreGraphics.framework in Frameworks */,
 				9332DB5118DBDF9700BE6EE0 /* UIKit.framework in Frameworks */,
 				9332DB4D18DBDF9700BE6EE0 /* Foundation.framework in Frameworks */,
@@ -103,6 +112,7 @@
 		9332DB4B18DBDF9700BE6EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93BF64C618DD3E9800E8F879 /* iAd.framework */,
 				9332DB4C18DBDF9700BE6EE0 /* Foundation.framework */,
 				9332DB4E18DBDF9700BE6EE0 /* CoreGraphics.framework */,
 				9332DB5018DBDF9700BE6EE0 /* UIKit.framework */,
@@ -114,7 +124,10 @@
 		9332DB5218DBDF9700BE6EE0 /* 2048 Race */ = {
 			isa = PBXGroup;
 			children = (
+				93BF64CE18DD78B600E8F879 /* sm152.png */,
 				9332DB5B18DBDF9700BE6EE0 /* BSAppDelegate.h */,
+				93BF64D218DD792200E8F879 /* sm76.png */,
+				93BF64D018DD791400E8F879 /* sm120.png */,
 				9332DB5C18DBDF9700BE6EE0 /* BSAppDelegate.m */,
 				9332DB5E18DBDF9700BE6EE0 /* Main_iPhone.storyboard */,
 				9332DB6118DBDF9700BE6EE0 /* Main_iPad.storyboard */,
@@ -233,7 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9332DB6318DBDF9700BE6EE0 /* Main_iPad.storyboard in Resources */,
+				93BF64D118DD791400E8F879 /* sm120.png in Resources */,
+				93BF64D318DD792200E8F879 /* sm76.png in Resources */,
 				9332DB6818DBDF9700BE6EE0 /* Images.xcassets in Resources */,
+				93BF64CF18DD78B600E8F879 /* sm152.png in Resources */,
 				9332DB6018DBDF9700BE6EE0 /* Main_iPhone.storyboard in Resources */,
 				9332DB5718DBDF9700BE6EE0 /* InfoPlist.strings in Resources */,
 			);
@@ -391,7 +407,6 @@
 		9332DB7F18DBDF9700BE6EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "2048 Race/2048 Race-Prefix.pch";
@@ -404,7 +419,6 @@
 		9332DB8018DBDF9700BE6EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "2048 Race/2048 Race-Prefix.pch";
@@ -475,6 +489,7 @@
 				9332DB8018DBDF9700BE6EE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9332DB8118DBDF9700BE6EE0 /* Build configuration list for PBXNativeTarget "2048 RaceTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +498,7 @@
 				9332DB8318DBDF9700BE6EE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
